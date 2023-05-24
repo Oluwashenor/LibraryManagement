@@ -2,3 +2,8 @@ Command
 Connection 
 DataReader
 DataApapter
+
+
+Data Tables can be created using Data apaters using data from DB 
+
+
