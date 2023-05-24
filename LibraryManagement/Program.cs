@@ -6,7 +6,8 @@ namespace LibraryManagement
         static void Main(string[] args)
         {
             Console.WriteLine("Adesina");
-            var dataSet = new DisconnectedArchiteture().GenerateDataSet();
+            var dataSet = new DisconnectedArchiteture();
+            dataSet.WriteToJson();
             Console.WriteLine("");
         }
     }

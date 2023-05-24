@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -76,6 +77,15 @@ namespace LibraryManagement
             DataRelation dre1 = new DataRelation("Book_Author_Rel",col_pk, col_fk);
             dataSet.Relations.Add(dre1);
             return dataSet;
+        }
+    
+        public void WriteToJson()
+        {
+            DataTable dataTable = GetBooks();
+            string json = JsonConvert.SerializeObject(dataTable);
+            StreamWriter writer = File.CreateText(@"C:\data\data.json");
+            writer.WriteLine(json);
+            writer.Close();
         }
     }
 }
